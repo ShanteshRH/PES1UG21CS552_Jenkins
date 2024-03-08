@@ -6,7 +6,7 @@
       steps {
         script {
           build 'PES1UG21CS552-1'
-          sh g++ -o output main.cpp'
+          sh 'g++ -o output main.cpp'
         }
       }
     }
