@@ -5,15 +5,16 @@
         stage('Build') { 
             steps {
                 script {
+		    sh 'g++ -o output main.cpp'
                     build 'PES1UG21CS552-1'
-                    sh 'g++ -o output main.cpp'
                 }
             }
         }
         stage('Test') {
             steps {
                 script {
-                    sh './output'
+                    def output = sh(script: './output', returnStdout: true).trim()
+                    echo "Output of main.cpp: ${output}"
                 }
             }
         }
