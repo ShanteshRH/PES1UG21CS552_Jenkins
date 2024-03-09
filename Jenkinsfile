@@ -5,7 +5,7 @@
         stage('Build') { 
             steps {
                 script {
-		    sh 'g++ -o output main.cpp'
+                    sh 'g++ -o output main.cpp'
                     build 'PES1UG21CS552-1'
                 }
             }
